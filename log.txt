@@ -334,3 +334,8 @@ Timestamp: Wed Sep 07 2022 00:46:54 GMT+0200 (Central European Summer Time)
 ::1 - - [30/Sep/2022:08:37:25 +0000] "POST /users/ HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.2"
 ::1 - - [30/Sep/2022:08:37:43 +0000] "POST /users/ HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.2"
 ::1 - - [01/Oct/2022:18:51:22 +0000] "POST /users/ HTTP/1.1" 500 16 "-" "PostmanRuntime/7.29.2"
+::1 - - [01/Oct/2022:20:24:31 +0000] "POST /movies/ HTTP/1.1" 400 50 "-" "PostmanRuntime/7.29.2"
+::1 - - [01/Oct/2022:20:24:49 +0000] "POST /users/ HTTP/1.1" 500 102 "-" "PostmanRuntime/7.29.2"
+::1 - - [01/Oct/2022:20:25:37 +0000] "POST /users/ HTTP/1.1" 500 102 "-" "PostmanRuntime/7.29.2"
+::1 - - [01/Oct/2022:20:25:49 +0000] "POST /users/ HTTP/1.1" 500 62 "-" "PostmanRuntime/7.29.2"
+::1 - - [01/Oct/2022:20:26:05 +0000] "POST /users/ HTTP/1.1" 201 132 "-" "PostmanRuntime/7.29.2"

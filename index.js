@@ -14,7 +14,7 @@ const Users = Models.User;
 const Genres = Models.Gener;
 const Directors = Models.Director;
 
-mongoose.connect("mongodb://localhost:27017/myFlixDB", { 
+mongoose.connect("mongodb://localhost:27017/test", { 
   useNewUrlParser: true, 
   useUnifiedTopology: true,
  });
@@ -29,18 +29,6 @@ app.use(morgan("common"));
  app.get ("/",(req,res) =>{
   res.send("welcom to myFlex");
 });
-
-//return json object when at/movies
-  app.get("/movies", (req, res) => {
-    Movirs.find()
-    .then((movies)=>{
-      res.status(201).json(movies);
-    })
-    .catch((err) => {
-      console.error(err);
-    })
-    res.status(500).send("Error:" + err);
-  });
 
 
   app.get("/users",function (req, res) {
@@ -62,11 +50,13 @@ app.use(morgan("common"));
  //ES6 javascript syntax
 app.get("/movies", (req, res) => {
   Movies.find()
-  .then(Movies => {
-  res.status(200).json(Movies);
+  .then((movies) => {
+    console.log(movies)
+  res.status(200).json(movies);
 }).catch((err) => {
   console.error(err);
   res.status(500).send("Error: " + err);
+});
 });
 
 const methodOverride = require("method-override");
@@ -256,8 +246,6 @@ app.put("/users/:username", (req, res) => {
   res.status(200).send(`Successfully updated!`);
 });
 
-
-
 app.delete("/users/:username", (req, res) => {
   const user = users.find((user) => {
     return user.username === req.params.username;
@@ -270,8 +258,6 @@ app.delete("/users/:username", (req, res) => {
     res.status(201).send("User" + req.params.username + " was deleted.");
   }
 });
-
-
 // Delete a user by username
 app.delete("/users/:Username", (req, res) => {
   Users.findOneAndRemove({ Username: req.params.Username })
