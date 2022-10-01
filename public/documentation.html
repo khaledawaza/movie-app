@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie API</title>
+</head>
+
+<body>
+    <div class="description">
+        <h1>Movie API</h1>
+        <p>This web application will provide users with access to information about different
+            movies, directors, and genres. Users will be able to sign up, update their
+            personal information, and create a list of their favorite movies.</p>
+    </div>
+    <div class="endpoint-list">
+        <div class="endpoint">
+            <h2 class="endpoint-title">List all movies</h2>
+            <span class="endpoint-method">GET</span>
+            <span class="endpoint-url">/movies</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A JSON object holding data
+                about all the movies</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Get a movie</h2>
+            <span class="endpoint-method">GET</span>
+            <span class="endpoint-url">/movies/[Title]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A JSON object holding data
+                about a single movie
+            <pre>
+                {
+                "title": "Thor: Ragnarok",
+                "year": 2017,
+                }
+            </pre>
+            </p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Add a movie</h2>
+            <span class="endpoint-method">POST</span>
+            <span class="endpoint-url">/movies</span>
+            <span class="endpoint-request">A JSON object holding data about the movie to be added</span>
+            <p class="endpoint-response">A JSON object holding data
+                about an added movie</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Remove a movie</h2>
+            <span class="endpoint-method">DELETE</span>
+            <span class="endpoint-url">/movies/[Title]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A message indicating
+                whether the movie was successfully removed</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Get a genre</h2>
+            <span class="endpoint-method">GET</span>
+            <span class="endpoint-url">/genres/[Genre]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A JSON object holding data
+                about a genre</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Get a director</h2>
+            <span class="endpoint-method">GET</span>
+            <span class="endpoint-url">/directors/[Director]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A JSON object holding data
+                about a director</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Create a new user</h2>
+            <span class="endpoint-method">POST</span>
+            <span class="endpoint-url">/users</span>
+            <span class="endpoint-request">A JSON object holding data about the new user</span>
+            <p class="endpoint-response">A JSON object holding data
+                about a registered user</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Update an user</h2>
+            <span class="endpoint-method">PUT</span>
+            <span class="endpoint-url">/users/[Username]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A text message indicating
+                the updated username</p>
+        </div>
+        <div class="endpoint">
+            <h2 class="endpoint-title">Delete an user</h2>
+            <span class="endpoint-method">DELETE</span>
+            <span class="endpoint-url">/users/[Username]</span>
+            <span class="endpoint-request">none</span>
+            <p class="endpoint-response">A message indicating
+                whether the user was successfully deregistered</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
