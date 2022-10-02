@@ -1,16 +1,23 @@
 //IMPORTS//
 const express = require("express"),
- bodyParser = require("body-parser"),
  uuid = require("uuid");
- let auth = require('./auth')(app);
  const path = require("path");
  const methodOverride = require("method-override");
- const passport = require('passport');
- require('./passport');
-
+ 
 
 const morgan = require("morgan");
+
 const app = express();
+bodyParser = require("body-parser"),
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+let auth = require('./auth')(app);
+const passport = require('passport');
+require('./passport');
+
+
 const fs = require("fs");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
@@ -26,7 +33,6 @@ mongoose.connect("mongodb://localhost:27017/test", {
   useUnifiedTopology: true,
  });
 
- app.use(bodyParser.json());
 
  
 //log resuests to server
@@ -49,10 +55,6 @@ app.use(morgan("common"));
         res.status(500).send("Error: " + err);
       });
   });
-
-
-
-
 
  //ES6 javascript syntax
 app.get("/movies",passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -79,11 +81,6 @@ app.use(morgan("combined", { stream: accessLogStream }
 ));
 
 app.use("/documentation.html",express.static("public"));
-
-
-app.use(bodyParser.urlencoded({
-  extended: true
-}));
 
 app.use(methodOverride());
 
