@@ -2,6 +2,12 @@
 const express = require("express"),
  bodyParser = require("body-parser"),
  uuid = require("uuid");
+ let auth = require('./auth')(app);
+ const path = require("path");
+ const methodOverride = require("method-override");
+ const passport = require('passport');
+ require('./passport');
+
 
 const morgan = require("morgan");
 const app = express();
@@ -14,13 +20,15 @@ const Users = Models.User;
 const Genres = Models.Gener;
 const Directors = Models.Director;
 
+
 mongoose.connect("mongodb://localhost:27017/test", { 
   useNewUrlParser: true, 
   useUnifiedTopology: true,
  });
- let auth = require('./auth')(app);
+
  app.use(bodyParser.json());
 
+ 
 //log resuests to server
 app.use(morgan("common"));
 
@@ -43,12 +51,11 @@ app.use(morgan("common"));
   });
 
 
-  const path = require("path");
 
 
 
  //ES6 javascript syntax
-app.get("/movies", (req, res) => {
+app.get("/movies",passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
   .then((movies) => {
     console.log(movies)
@@ -59,7 +66,6 @@ app.get("/movies", (req, res) => {
 });
 });
 
-const methodOverride = require("method-override");
 
 // MORGAN //////
 // accessLogStream uses the fs and path modules to append "log.txt"
