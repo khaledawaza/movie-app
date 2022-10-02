@@ -18,7 +18,7 @@ mongoose.connect("mongodb://localhost:27017/test", {
   useNewUrlParser: true, 
   useUnifiedTopology: true,
  });
-
+ let auth = require('./auth')(app);
  app.use(bodyParser.json());
 
 //log resuests to server
