@@ -13,10 +13,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-let auth = require('./auth')(app);
-const passport = require('passport');
-require('./passport');
-
+require('./auth')(app);
+const passport = require('./passport');
 
 const fs = require("fs");
 const mongoose = require("mongoose");
@@ -33,17 +31,14 @@ mongoose.connect("mongodb://localhost:27017/test", {
   useUnifiedTopology: true,
  });
 
-
  
 //log resuests to server
 app.use(morgan("common"));
-
 
  //default text response when at /
  app.get ("/",(req,res) =>{
   res.send("welcom to myFlex");
 });
-
 
   app.get("/users",function (req, res) {
     Users.find()
@@ -127,7 +122,6 @@ app.post("/users/:Username/movies/:MovieID", (req, res) => {
     }
   });
 });
-
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname+"/public/documentation.html"));
