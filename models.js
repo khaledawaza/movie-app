@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+const bcrypt = require('bcrypt');
 let movieSchema = mongoose.Schema({
     Title: {type: String, required: true},
     Description: {type: String, required: true},
@@ -30,4 +30,3 @@ let movieSchema = mongoose.Schema({
   module.exports.Movie = Movie;
   module.exports.User = User;
 
-  
