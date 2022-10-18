@@ -20,6 +20,9 @@ const fs = require("fs");
 const mongoose = require("mongoose");
 const Models = require("./models.js");
 
+const { check, validationResult } = require('express-validator');
+
+
 const Movies = Models.Movie;
 const Users = Models.User;
 const Genres = Models.Gener;
@@ -131,6 +134,53 @@ app.post('/users', (req, res) => {
       res.status(500).send('Error: ' + error);
     });
 });
+app.post('/users',
+  // Validation logic here for request
+  //you can either use a chain of methods like .not().isEmpty()
+  //which means "opposite of isEmpty" in plain english "is not empty"
+  //or use .isLength({min: 5}) which means
+  //minimum value of 5 characters are only allowed
+  [
+    check('Username', 'Username is required').isLength({min: 5}),
+    check('Username', 'Username contains non alphanumeric characters - not allowed.').isAlphanumeric(),
+    check('Password', 'Password is required').not().isEmpty(),
+    check('Email', 'Email does not appear to be valid').isEmail()
+  ], (req, res) => {
+
+  // check the validation object for errors
+    let errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    let hashedPassword = Users.hashPassword(req.body.Password);
+    Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested username already exists
+      .then((user) => {
+        if (user) {
+          //If the user is found, send a response that it already exists
+          return res.status(400).send(req.body.Username + ' already exists');
+        } else {
+          Users
+            .create({
+              Username: req.body.Username,
+              Password: hashedPassword,
+              Email: req.body.Email,
+              Birthday: req.body.Birthday
+            })
+            .then((user) => { res.status(201).json(user) })
+            .catch((error) => {
+              console.error(error);
+              res.status(500).send('Error: ' + error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send('Error: ' + error);
+      });
+  });
+  
 
 // Add a movie to a user"s list of favorites
 app.post("/users/:Username/movies/:MovieID", (req, res) => {
@@ -337,6 +387,7 @@ function notFound(req, res, next) {
 
 app.use(notFound);
 
-app.listen(8080, () => {
-  console.log("Your app is listening on port 8080.");
-});
+const port = process.env.PORT || 8080;
+app.listen(port, '0.0.0.0',() => {
+ console.log('Listening on Port ' + port);
+}); 
