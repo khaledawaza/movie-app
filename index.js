@@ -104,28 +104,32 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
-
-app.post("/users", (req, res) => {
-  Users.findOne({ Username: req.body.Username })
+app.post('/users', (req, res) => {
+  let hashedPassword = Users.hashPassword(req.body.Password);
+  Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested username already exists
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + "already exists");
+      //If the user is found, send a response that it already exists
+        return res.status(400).send(req.body.Username + ' already exists');
       } else {
-       
-        Users.create({
+        Users
+          .create({
             Username: req.body.Username,
-            Password: req.body.Password,
+            Password: hashedPassword,
             Email: req.body.Email,
             Birthday: req.body.Birthday
           })
-          .then((user) =>{res.status(201).json(user) })
-
-        .catch((error) => {
-          console.error(error);
-          res.status(500).send("Error: " + error);
-        })
+          .then((user) => { res.status(201).json(user) })
+          .catch((error) => {
+            console.error(error);
+            res.status(500).send('Error: ' + error);
+          });
       }
     })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+    });
 });
 
 // Add a movie to a user"s list of favorites
