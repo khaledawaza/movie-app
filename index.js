@@ -28,13 +28,26 @@ const Users = Models.User;
 const Genres = Models.Gener;
 const Directors = Models.Director;
 
-
+/*
 mongoose.connect("mongodb://localhost:27017/myFlixDB", { 
   useNewUrlParser: true, 
   useUnifiedTopology: true,
  });
 
  let auth = require('./auth')(app);
+ */
+
+// --apiVersion 1 --username admin'
+
+ mongoose.connect('mongodb+srv://admin:6Itu9nmTMeOhblBK@cluster0.vg1x4ip.mongodb.net/?retryWrites=true&w=majority' , { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true,
+ });
+ mongoose.connect( process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+
+ let auth = require('./auth')(app);
+
+ 
 
  
 //log resuests to server

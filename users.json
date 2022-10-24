@@ -1,0 +1,90 @@
+[{
+  "_id": {
+    "$oid": "632c99aa0dddcf22144e9f94"
+  },
+  "UserName": "khaled awaza",
+  "Password": "123456",
+  "Email": "khaledawaza@gmail.com",
+  "Birthday": "21/08/1993",
+  "FavoriteMovies": [
+    "1,2"
+  ]
+},{
+  "_id": {
+    "$oid": "632cb2f9f98370b2614924c9"
+  },
+  "Username": "majd sammy",
+  "Password": "1234",
+  "Email": "magdsammyQgmail.com",
+  "Brethday": "22/09/2000",
+  "FavoritMovies": [
+    "1,2"
+  ]
+},{
+  "_id": {
+    "$oid": "632cb7ecf98370b2614924cb"
+  },
+  "Username": "lama asmae",
+  "Password": "9876",
+  "Email": "lamaasmae@gmail.com",
+  "Berthday": "12/11/1998",
+  "FavoritMovies": [
+    "3,2"
+  ]
+},{
+  "_id": {
+    "$oid": "633b50c9f7f3659598d739b7"
+  },
+  "Username": "khaledawaza",
+  "Password": "1234",
+  "Email": "khaled@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "745891200000"
+    }
+  },
+  "FavoriteMovies": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "633b6bdba986818a4ab21227"
+  },
+  "Username": "oussama",
+  "Password": "123456",
+  "Email": "oussama@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "820800000000"
+    }
+  },
+  "FavoriteMovies": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "633b73cd91d5ad5cc44e78bb"
+  },
+  "Username": "test",
+  "Password": "123456",
+  "Email": "test@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "820800000000"
+    }
+  },
+  "FavoriteMovies": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63470ecbc731962c3273d035"
+  },
+  "Username": "test2",
+  "Password": "1893456",
+  "Email": "test2@gmail.com",
+  "Birthday": {
+    "$date": {
+      "$numberLong": "834192000000"
+    }
+  },
+  "FavoriteMovies": [],
+  "__v": 0
+}]

@@ -1,0 +1,76 @@
+[{
+  "_id": {
+    "$oid": "632b99670dddcf22144e9f93"
+  },
+  "Title": "Silence of the Lambs",
+  "Description": "A young FBI cadet must recive the help of an incarcerated and manipulativ cannibal killer to help catch another serial killer.",
+  "Genre": {
+    "Name": "Thriller",
+    "Descripttion": "Thriller film, also know as supense film supense thriller, is a broad film genre that involves excitment and supense in the audience."
+  },
+  "Director": {
+    "Name": "Jonathan Demme",
+    "Bio": "robert jonathan Demme was an Amercan director, producer, and scerrnwriter",
+    "Birth": "1944",
+    "Death": "2017"
+  },
+  "ImagePath": "silencoftheLambs.png",
+  "Featured": true,
+  "Actors": [
+    "Kasi Lemmings"
+  ]
+},{
+  "_id": {
+    "$oid": "632d713ac06628788bba0aa1"
+  },
+  "Title": "The Little MermaUserId",
+  "Description": "A mermaid princess makes a Faustian bargain in an attempt to become human and win a prince love.",
+  "Genre": {
+    "Name": "Thriller",
+    "Description": "The story follows the journey of a young mermaid who is willing to give up her life in the sea as a mermaid to gain a human soul. The tale was first published in 1837 as part of a collection of fairy tales for children."
+  },
+  "Director": {
+    "Name": "John Musker",
+    "Bio": "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+    "Birth": "1944",
+    "Death": "2019"
+  },
+  "ImagePath": "https://www.imdb.com/title/tt5971474/mediaviewer/rm1812844545/?ref_=tt_ov_i",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "632d733ac06628788bba0aa2"
+  },
+  "Title": "Thor: Ragnarok",
+  "Description": "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.",
+  "Genre": {
+    "Name": " Comedy",
+    "Description": "The story follows . The soper herro trying to go back to the erth to see the famile thay left befor 1200 years befor."
+  },
+  "Director": {
+    "Name": "John Musker",
+    "Bio": "Robert Jonathan Demme was an American director, producer, and screenwriter.",
+    "Birth": "1967",
+    "Death": "2022"
+  },
+  "ImagePath": "https://www.imdb.com/title/tt5971474/mediaviewer/rm1812844545/?ref_=tt_ov_i",
+  "Featured": true
+},{
+  "_id": {
+    "$oid": "632d74bbc06628788bba0aa3"
+  },
+  "Title": "Titanic",
+  "Description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+  "Genre": {
+    "Name": " Drama",
+    "Description": "The story follows . The soper herro trying to go back to the erth to see the famile thay left befor 1200 years befor."
+  },
+  "Director": {
+    "Name": "James Cameron",
+    "Bio": "James Francis Cameron was born on August 16, 1954 in Kapuskasing, Ontario, Canada. He moved to the United States in 1971. The son of an engineer, he majored in physics at California State University before switching to English, and eventually dropping out. He then drove a truck to support his screenwriting ambition.",
+    "Birth": "1967",
+    "Death": "2022"
+  },
+  "ImagePath": "https://www.imdb.com/title/tt0120338/mediaviewer/rm2647458304/?ref_=tt_ov_i",
+  "Featured": true
+}]
