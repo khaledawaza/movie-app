@@ -29,7 +29,7 @@ const Genres = Models.Gener;
 const Directors = Models.Director;
 
 
-mongoose.connect("mongodb://localhost:27017/test", { 
+mongoose.connect("mongodb://localhost:27017/myFlixDB", { 
   useNewUrlParser: true, 
   useUnifiedTopology: true,
  });
