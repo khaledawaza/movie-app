@@ -94,6 +94,8 @@ app.use(cors());
       });
   });
 
+
+
  //ES6 javascript syntax
 app.get("/movies",passport.authenticate('jwt', { session: false }), (req, res) => {
   Movies.find()
@@ -126,6 +128,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
 });
+
+
+/* Post to /users route to eget all app users */
 app.post('/users', (req, res) => {
   let hashedPassword = Users.hashPassword(req.body.Password);
   Users.findOne({ Username: req.body.Username }) // Search to see if a user with the requested username already exists
@@ -153,6 +158,8 @@ app.post('/users', (req, res) => {
       res.status(500).send('Error: ' + error);
     });
 });
+
+
 app.post('/users',
   // Validation logic here for request
   //you can either use a chain of methods like .not().isEmpty()
