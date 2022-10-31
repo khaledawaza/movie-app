@@ -376,3 +376,4 @@ Timestamp: Wed Sep 07 2022 00:46:54 GMT+0200 (Central European Summer Time)
 127.0.0.1 - - [31/Oct/2022:10:37:14 +0000] "POST /users HTTP/1.1" 500 59 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [31/Oct/2022:10:39:33 +0000] "POST /users HTTP/1.1" 201 185 "-" "PostmanRuntime/7.29.2"
 127.0.0.1 - - [31/Oct/2022:10:44:33 +0000] "POST /users HTTP/1.1" 201 185 "-" "PostmanRuntime/7.29.2"
+127.0.0.1 - - [31/Oct/2022:10:53:11 +0000] "POST /users HTTP/1.1" 400 23 "-" "PostmanRuntime/7.29.2"

@@ -46,10 +46,10 @@ mongoose.connect("mongodb://localhost:27017/myFlixDB", {
   useUnifiedTopology: true,
  }); */
 
- //const CONNECTION_URI = 'mongodb+srv://admin:6Itu9nmTMeOhblBK@cluster0.vg1x4ip.mongodb.net/?retryWrites=true&w=majority'
+ const CONNECTION_URI = 'mongodb+srv://admin:6Itu9nmTMeOhblBK@cluster0.vg1x4ip.mongodb.net/?retryWrites=true&w=majority'
 //const CONNECTION_URI = 'mongodb://localhost:27017/myFlixDB'
  
-mongoose.connect(process.env.CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(CONNECTION_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
  let auth = require('./auth')(app);
 
